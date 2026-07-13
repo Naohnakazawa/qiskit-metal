@@ -658,8 +658,17 @@
             <span class="n">all_res</span><span class="p">[</span><span class="n">idx_cmat</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">lumped_oscillator</span> <span class="o">=</span> <span class="n">all_res</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sim</span><span class="o">.</span><span class="n">capacitance_all_passes</span><span class="p">)]</span>
         <span class="n">all_res</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">all_res</span><span class="p">)</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
-        <span class="n">all_res</span><span class="p">[</span><span class="s2">&quot;χr MHz&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">all_res</span><span class="p">[</span><span class="s2">&quot;chi_in_MHz&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
-        <span class="n">all_res</span><span class="p">[</span><span class="s2">&quot;gr MHz&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">all_res</span><span class="p">[</span><span class="s2">&quot;gbus&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+        <span class="c1"># ``chi_in_MHz`` / ``gbus`` are per-pass sequences of coupling-pad</span>
+        <span class="c1"># values; take the first (readout) entry. Their concrete type shifted</span>
+        <span class="c1"># from pandas Series to numpy.ndarray with newer numpy/pandas, so</span>
+        <span class="c1"># ``.iloc[0]`` raised ``AttributeError`` on ndarrays. Read the first</span>
+        <span class="c1"># element in a way that works for a Series, ndarray, or list. (#1125)</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">_first</span><span class="p">(</span><span class="n">seq</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">seq</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="s2">&quot;iloc&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="n">seq</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="n">all_res</span><span class="p">[</span><span class="s2">&quot;χr MHz&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">all_res</span><span class="p">[</span><span class="s2">&quot;chi_in_MHz&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">_first</span><span class="p">))</span>
+        <span class="n">all_res</span><span class="p">[</span><span class="s2">&quot;gr MHz&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">all_res</span><span class="p">[</span><span class="s2">&quot;gbus&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">_first</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">lumped_oscillator_all</span> <span class="o">=</span> <span class="n">all_res</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">lumped_oscillator_all</span></div>
 
@@ -722,7 +731,7 @@
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on 2026/07/09</div>
+              Last updated on 2026/07/13</div>
           </div>
           <div class="right-details">
             
