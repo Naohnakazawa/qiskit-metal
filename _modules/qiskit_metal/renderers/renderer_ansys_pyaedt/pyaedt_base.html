@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../../genindex.html"><link rel="search" title="Search" href="../../../../search.html">
 
     <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
-        <title>qiskit_metal.renderers.renderer_ansys_pyaedt.pyaedt_base - Quantum Metal 0.7.6</title>
+        <title>qiskit_metal.renderers.renderer_ansys_pyaedt.pyaedt_base - Quantum Metal 0.8.0</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/styles/qiskit-sphinx-theme.css?v=8ff9dcb6" />
@@ -156,7 +156,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../../../index.html"><div class="brand">Quantum Metal 0.7.6</div></a>
+      <a href="../../../../index.html"><div class="brand">Quantum Metal 0.8.0</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -178,7 +178,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../../index.html">
   
   
-  <span class="sidebar-brand-text">Quantum Metal 0.7.6</span>
+  <span class="sidebar-brand-text">Quantum Metal 0.8.0</span>
   
 </a>
 <form class="sidebar-search-container" method="get" action="../../../../search.html" role="search">
@@ -210,6 +210,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../tut/2-From-components-to-chip/2.21-Design-a-4-qubit-full-chip.html">2.21 Design a 4 qubit full chip</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../tut/2-From-components-to-chip/2.22-Design-100-qubits-programmatically.html">2.22 Design 100 qubits programmatically</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../tut/2-From-components-to-chip/2.23-Modify-chip-options.html">2.23 Modify chip options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tut/2-From-components-to-chip/2.24-Design-rule-checking.html">Design rule checking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../tut/2-From-components-to-chip/2.31-Create-a-QComponent-Basic.html">2.31 Create a QComponent - Basic</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../tut/2-From-components-to-chip/2.32-Create-a-QComponent-Advanced.html">2.32 Create a QComponent - Advanced</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../tut/2-From-components-to-chip/2.33-Add-my-QComponent-to-a-reusable-python-file.html">2.33 Add my QComponent to a reusable python file</a></li>
@@ -461,9 +462,7 @@
         </div>
         <article role="main" id="furo-main-content">
           <h1>Source code for qiskit_metal.renderers.renderer_ansys_pyaedt.pyaedt_base</h1><div class="highlight"><pre>
-<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
-
-<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Union</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -1101,7 +1100,7 @@
 <div class="viewcode-block" id="QPyaedt.render_design">
 <a class="viewcode-back" href="../../../../apidocs/qiskit_metal.renderers.QPyaedt.html#qiskit_metal.renderers.QPyaedt.render_design">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">render_design</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span> <span class="n">selection</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">box_plus_buffer</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">selection</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">list</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">box_plus_buffer</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Must be implemented by the subclass to finish the logic for HFSS  OR Q3D within project.</span>
 
@@ -1473,7 +1472,7 @@
 
 <div class="viewcode-block" id="QPyaedt.get_chip_names">
 <a class="viewcode-back" href="../../../../apidocs/qiskit_metal.renderers.QPyaedt.html#qiskit_metal.renderers.QPyaedt.get_chip_names">[docs]</a>
-    <span class="k">def</span><span class="w"> </span><span class="nf">get_chip_names</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_chip_names</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Obtain a list of chips on which the selection of components, if valid, resides.</span>
 
@@ -1739,7 +1738,7 @@
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on 2026/07/27</div>
+              Last updated on 2026/08/04</div>
           </div>
           <div class="right-details">
             
@@ -1754,7 +1753,7 @@
       
     </aside>
   </div>
-</div><script src="../../../../_static/documentation_options.js?v=918ced64"></script>
+</div><script src="../../../../_static/documentation_options.js?v=486e5634"></script>
     <script src="../../../../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../../../../_static/scripts/furo.js?v=46bd48cc"></script>

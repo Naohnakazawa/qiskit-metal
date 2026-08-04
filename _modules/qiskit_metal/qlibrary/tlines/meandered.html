@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../../genindex.html"><link rel="search" title="Search" href="../../../../search.html">
 
     <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
-        <title>qiskit_metal.qlibrary.tlines.meandered - Quantum Metal 0.7.6</title>
+        <title>qiskit_metal.qlibrary.tlines.meandered - Quantum Metal 0.8.0</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/styles/qiskit-sphinx-theme.css?v=8ff9dcb6" />
@@ -156,7 +156,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../../../index.html"><div class="brand">Quantum Metal 0.7.6</div></a>
+      <a href="../../../../index.html"><div class="brand">Quantum Metal 0.8.0</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -178,7 +178,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../../index.html">
   
   
-  <span class="sidebar-brand-text">Quantum Metal 0.7.6</span>
+  <span class="sidebar-brand-text">Quantum Metal 0.8.0</span>
   
 </a>
 <form class="sidebar-search-container" method="get" action="../../../../search.html" role="search">
@@ -210,6 +210,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../tut/2-From-components-to-chip/2.21-Design-a-4-qubit-full-chip.html">2.21 Design a 4 qubit full chip</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../tut/2-From-components-to-chip/2.22-Design-100-qubits-programmatically.html">2.22 Design 100 qubits programmatically</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../tut/2-From-components-to-chip/2.23-Modify-chip-options.html">2.23 Modify chip options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tut/2-From-components-to-chip/2.24-Design-rule-checking.html">Design rule checking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../tut/2-From-components-to-chip/2.31-Create-a-QComponent-Basic.html">2.31 Create a QComponent - Basic</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../tut/2-From-components-to-chip/2.32-Create-a-QComponent-Advanced.html">2.32 Create a QComponent - Advanced</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../tut/2-From-components-to-chip/2.33-Add-my-QComponent-to-a-reusable-python-file.html">2.33 Add my QComponent to a reusable python file</a></li>
@@ -461,9 +462,7 @@
         </div>
         <article role="main" id="furo-main-content">
           <h1>Source code for qiskit_metal.qlibrary.tlines.meandered</h1><div class="highlight"><pre>
-<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
-
-<span class="c1"># This code is part of Qiskit.</span>
+<span></span><span class="c1"># This code is part of Qiskit.</span>
 <span class="c1">#</span>
 <span class="c1"># (C) Copyright IBM 2017, 2021.</span>
 <span class="c1">#</span>
@@ -665,6 +664,15 @@
             <span class="c1"># odd meander_number is no good if roots have opposite orientation (w.r.t sideway)</span>
             <span class="n">meander_number</span> <span class="o">-=</span> <span class="mi">1</span>
 
+        <span class="c1"># The parity adjustment above can take meander_number from 1 to 0 —</span>
+        <span class="c1"># re-check, or the meander point array below is allocated with a</span>
+        <span class="c1"># single row and the snap alignment (pts[-2]) crashes with an</span>
+        <span class="c1"># IndexError. Same graceful no-meander degradation as the first</span>
+        <span class="c1"># check after floor().</span>
+        <span class="k">if</span> <span class="n">meander_number</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Zero meanders for </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="nb">float</span><span class="p">)</span>
+
         <span class="c1"># should the first meander go sideways or counter sideways?</span>
         <span class="n">start_meander_direction</span> <span class="o">=</span> <span class="n">mao</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">start_pt</span><span class="o">.</span><span class="n">direction</span><span class="p">,</span> <span class="n">sideways</span><span class="p">)</span>
         <span class="n">end_meander_direction</span> <span class="o">=</span> <span class="n">mao</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">end_pt</span><span class="o">.</span><span class="n">direction</span><span class="p">,</span> <span class="n">sideways</span><span class="p">)</span>
@@ -685,6 +693,44 @@
         <span class="n">length_excess</span> <span class="o">=</span> <span class="n">length_meander</span> <span class="o">-</span> <span class="n">length_direct</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="nb">abs</span><span class="p">(</span><span class="n">asymmetry</span><span class="p">)</span>
         <span class="c1"># how much meander offset from center-line is needed to accommodate the length_excess (perpendicular length)</span>
         <span class="n">length_perp</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">length_excess</span> <span class="o">/</span> <span class="p">(</span><span class="n">meander_number</span> <span class="o">*</span> <span class="mf">2.0</span><span class="p">))</span>
+
+        <span class="c1"># If length_perp is smaller than the fillet radius, the corner-rounding</span>
+        <span class="c1"># arcs at the top and bottom of each wiggle cannot fit without</span>
+        <span class="c1"># overlapping -- the geometry degenerates into sharp, unfileted,</span>
+        <span class="c1"># castellation-like kinks instead of a smooth meander (issue #1086).</span>
+        <span class="c1"># This happens whenever length_excess must be split across more</span>
+        <span class="c1"># wiggles (meander_number) than it can comfortably support, e.g. a</span>
+        <span class="c1"># short total_length relative to spacing, or a large fillet. Fewer,</span>
+        <span class="c1"># deeper wiggles (lower meander_number) give each one more room, so</span>
+        <span class="c1"># reduce meander_number -- by 2 at a time, to preserve the even/odd</span>
+        <span class="c1"># parity already chosen above for the start/end pin directions --</span>
+        <span class="c1"># until length_perp clears the fillet radius or no further reduction</span>
+        <span class="c1"># is possible without hitting zero (which would leave no meander).</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">fillet</span> <span class="ow">and</span> <span class="n">length_perp</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">fillet</span> <span class="ow">and</span> <span class="n">meander_number</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">original_meander_number</span> <span class="o">=</span> <span class="n">meander_number</span>
+            <span class="k">while</span> <span class="n">meander_number</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">length_perp</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">fillet</span><span class="p">:</span>
+                <span class="n">meander_number</span> <span class="o">-=</span> <span class="mi">2</span>
+                <span class="n">length_perp</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">length_excess</span> <span class="o">/</span> <span class="p">(</span><span class="n">meander_number</span> <span class="o">*</span> <span class="mf">2.0</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">meander_number</span> <span class="o">!=</span> <span class="n">original_meander_number</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">: reduced meander_number from &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">original_meander_number</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">meander_number</span><span class="si">}</span><span class="s2"> so each &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;wiggle has room for the </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">fillet</span><span class="si">}</span><span class="s2">mm fillet &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;(length_perp=</span><span class="si">{</span><span class="n">length_perp</span><span class="si">:</span><span class="s2">.4g</span><span class="si">}</span><span class="s2">mm). The requested &quot;</span>
+                    <span class="s2">&quot;meander.spacing packs more wiggles into this route than &quot;</span>
+                    <span class="s2">&quot;the available length_excess can support without &quot;</span>
+                    <span class="s2">&quot;producing sharp, unfileted kinks. Increase total_length, &quot;</span>
+                    <span class="s2">&quot;increase meander.spacing, or decrease fillet to avoid &quot;</span>
+                    <span class="s2">&quot;this adjustment.&quot;</span>
+                <span class="p">)</span>
+            <span class="k">if</span> <span class="n">length_perp</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">fillet</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">: even at the minimum meander_number=</span><span class="si">{</span><span class="n">meander_number</span><span class="si">}</span><span class="s2">, &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;length_perp=</span><span class="si">{</span><span class="n">length_perp</span><span class="si">:</span><span class="s2">.4g</span><span class="si">}</span><span class="s2">mm is still smaller than &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;fillet=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">fillet</span><span class="si">}</span><span class="s2">mm -- this route&#39;s meander cannot be &quot;</span>
+                    <span class="s2">&quot;cleanly filleted with the current total_length / spacing / &quot;</span>
+                    <span class="s2">&quot;fillet combination and will still show sharp kinks.&quot;</span>
+                <span class="p">)</span>
 
         <span class="c1"># USES ROW Vectors</span>
         <span class="c1"># const vec. of unit normals</span>
@@ -979,7 +1025,7 @@
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on 2026/07/27</div>
+              Last updated on 2026/08/04</div>
           </div>
           <div class="right-details">
             
@@ -994,7 +1040,7 @@
       
     </aside>
   </div>
-</div><script src="../../../../_static/documentation_options.js?v=918ced64"></script>
+</div><script src="../../../../_static/documentation_options.js?v=486e5634"></script>
     <script src="../../../../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../../../../_static/scripts/furo.js?v=46bd48cc"></script>
