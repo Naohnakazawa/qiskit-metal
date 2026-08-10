@@ -270,8 +270,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../circuit-examples/A.Qubits/09-JJ-Manhattan.html">Josephson Junction (Manhattan)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../circuit-examples/A.Qubits/10-Transmon_floating_teeth.html">Single Transmon - Floating with teeth</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../circuit-examples/A.Qubits/11-Star_shaped_qubit.html">Star shaped qubit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../circuit-examples/A.Qubits/11-Star_shaped_qubit.html#A-Star-Qubit">A Star Qubit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../circuit-examples/A.Qubits/11-Star_shaped_qubit.html#Closing-the-Qiskit-Metal-GUI">Closing the Qiskit Metal GUI</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../circuit-examples/B.Resonators/11-Resonator_Meander.html">Simple CPW Meander</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../circuit-examples/C.Composite-bi-partite/21-OneTransmonsWithMeanderAndOTG.html">Transmon coupled to CPW resonator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../circuit-examples/D.Qubit-couplers/31-TwoCrossmonsTunableCoupler.html">Tunable Coupler (MIT)</a></li>
@@ -484,6 +482,12 @@ makes up the connector. Note, DC SQUID currently represented by single
 inductance sheet</p>
 <p>Add connectors to it using the <cite>connection_pads</cite> dictionary. See BaseQubit for more
 information.</p>
+<p>A connector may also be placed on the south arm with
+<code class="docutils literal notranslate"><span class="pre">connector_location='270'</span></code>, but that is the arm carrying the junction:
+at the default options the claw clears the junction by ~11um and its etch
+region comes within ~5um of it. Check the clearance against your process
+design rules before using it, and note that <cite>TransmonCrossFL</cite> puts its
+flux line on that same arm.</p>
 <dl>
 <dt>Sketch:</dt><dd><p>Below is a sketch of the qubit</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>                            <span class="n">claw_length</span>
@@ -516,7 +520,7 @@ information.</p>
 <li><p>claw_width: ‘10um’ – The width of the CPW center trace making up the claw/gap connector</p></li>
 <li><p>claw_width_back: None – The width of the back (towards the incoming CPW) of the claw connector. Defaults to claw_width when None</p></li>
 <li><p>claw_gap: ‘6um’ – The gap of the CPW center trace making up the claw/gap connector</p></li>
-<li><p>connector_location: ‘0’ – 0 =&gt; ‘west’ arm, 90 =&gt; ‘north’ arm, 180 =&gt; ‘east’ arm</p></li>
+<li><p>connector_location: ‘0’ – 0 =&gt; ‘west’ arm, 90 =&gt; ‘north’ arm, 180 =&gt; ‘east’ arm, 270 =&gt; ‘south’ arm</p></li>
 </ul>
 </dd>
 </dl>
@@ -1162,7 +1166,7 @@ this function</p>
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on 2026/08/04</div>
+              Last updated on 2026/08/10</div>
           </div>
           <div class="right-details">
             
