@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../../genindex.html"><link rel="search" title="Search" href="../../../../search.html">
 
     <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
-        <title>qiskit_metal.renderers.renderer_gmsh.gmsh_utils - Quantum Metal 0.8.1</title>
+        <title>qiskit_metal.renderers.renderer_gmsh.gmsh_utils - Quantum Metal 0.9.0</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/styles/qiskit-sphinx-theme.css?v=8ff9dcb6" />
@@ -156,7 +156,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../../../index.html"><div class="brand">Quantum Metal 0.8.1</div></a>
+      <a href="../../../../index.html"><div class="brand">Quantum Metal 0.9.0</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -178,7 +178,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../../index.html">
   
   
-  <span class="sidebar-brand-text">Quantum Metal 0.8.1</span>
+  <span class="sidebar-brand-text">Quantum Metal 0.9.0</span>
   
 </a>
 <form class="sidebar-search-container" method="get" action="../../../../search.html" role="search">
@@ -201,6 +201,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../tut/1-Overview/1.3-Build-a-4-qubit-chip.html">1.3 Build a 4-qubit chip</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../tut/1-Overview/1.4-Saving-Your-Chip-Design.html">1.4 Saving Your Chip Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../tut/1-Overview/1.5-Parametric-design---iterate-and-compare.html">1.5 Parametric Design: Iterate and Compare</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tut/4-Analysis/4.41-The-package-mode-on-paper.html">4.41 The Package Mode on Paper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tut/4-Analysis/4.42-Four-ways-to-measure-a-coupling.html">4.42 Four Ways to Measure a Coupling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tut/4-Analysis/4.43-Mesh-and-solve-the-10x10-processor.html">4.43 Mesh and Solve the 10 × 10 Processor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tut/4-Analysis/4.44-Every-coupling-from-one-eigenmode.html">4.44 Every Coupling from One Eigenmode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tut/4-Analysis/4.45-Four-methods-one-full-wave-model.html">4.45 Four Methods, One Full-Wave Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../tut/2-From-components-to-chip/2.01-How-to-use-a-QComponent.html">2.01 QComponent lifecycle — use, copy, delete, rename</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../tut/2-From-components-to-chip/2.11-Routing-101.html">2.11 Routing 101</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../tut/2-From-components-to-chip/2.12-Simple-Meander.html">2.12 Simple Meander</a></li>
@@ -211,6 +216,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../tut/2-From-components-to-chip/2.22-Design-100-qubits-programmatically.html">2.22 Design 100 qubits programmatically</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../tut/2-From-components-to-chip/2.23-Modify-chip-options.html">2.23 Modify chip options</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../tut/2-From-components-to-chip/2.24-Design-rule-checking.html">Design rule checking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tut/2-From-components-to-chip/FlipChip-design-tutorial.html">Flip-Chip Devices in Quantum Metal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../tut/2-From-components-to-chip/2.31-Create-a-QComponent-Basic.html">2.31 Create a QComponent - Basic</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../tut/2-From-components-to-chip/2.32-Create-a-QComponent-Advanced.html">2.32 Create a QComponent - Advanced</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../tut/2-From-components-to-chip/2.33-Add-my-QComponent-to-a-reusable-python-file.html">2.33 Add my QComponent to a reusable python file</a></li>
@@ -237,15 +243,18 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../tut/4-Analysis/4.21-Capacitance-matrix.html">4.21 Sweeps - Capacitance matrix</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../tut/4-Analysis/4.22-Eigenmode-matrix.html">4.22 Sweeps - Eigenmode matrix</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../tut/4-Analysis/4.23-Impedance-and-scattering-Z-S-Y-matrices.html">4.23 Sweeps - Impedance, scattering and admittance (Z S Y) matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tut/4-Analysis/pyaedt-multiplanar/DrivenModal-pyaedt-multiplanar.html">HFSS Driven Modal Simulation of a MultiPlanar Design with pyaedt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tut/4-Analysis/pyaedt-multiplanar/Eigenmode-pyaedt-multiplanar.html">Running Eigenmode Simulations &amp; EPR Analysis with <code class="docutils literal notranslate"><span class="pre">QHFSSEigenmodePyaedt</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tut/4-Analysis/pyaedt-multiplanar/Q3D-pyaedt-multiplanar.html">Q3D Capacitance Matrix of a MultiPlanar Design with pyaedt</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../tut/4-Analysis/4.31-Plot-quantum-oscillator-wavefunction.html">4.31 Plotting Wavefunctions of the Quantum Harmonic Oscillator (LC Circuit)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../tut/4-Analysis/4.32-Transmon-analytics-HCPB.html">4.32 Transmon Analytics: Plotting Eigenvalues as a Function of Offset Charge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../tut/4-Analysis/4.33-Transmon-analytics.html">4.33 Transmon Analytics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../tut/4-Analysis/4.34-Transmon-qubit-CPB-hamiltonian-charge-basis.html">4.34 Modeling transmon qubit Cooper-pair box Hamiltonian in the charge basis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../tut/4-Analysis/Design-and-Simulation-of-a-Cross-Resonance-Gate.html">The Cross Resonance (CR) Gate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../tut/4-Analysis/cQED-with-the-Jaynes-Cummings-Interaction-Model.html">Circuit Quantum Electrodynamics (cQED) and the Jaynes-Cummings Interaction Model Using the HCPB Class and QuTip</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../tut/full-design-examples/Reference-design-1-Transmon-with-readout-resonator.html">Reference design 1 — Transmon with readout resonator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../tut/full-design-examples/Reference-design-2-Two-coupled-transmons.html">Reference design 2 — Two coupled transmons</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../tut/full-design-examples/Reference-design-3-Four-qubit-multiplexed-readout.html">Reference design 3 — Four-qubit multiplexed readout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tut/full-design-examples/A.1-Transmon-with-readout-resonator.html">A.1 Reference design — Transmon with readout resonator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tut/full-design-examples/A.2-Two-coupled-transmons.html">A.2 Reference design — Two coupled transmons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tut/full-design-examples/A.3-Four-qubit-multiplexed-readout.html">A.3 Reference design — Four-qubit multiplexed readout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../tut/quick-topics/JJ-Demo-Notebook.html">Josephson Junction QComponent Demo Notebook</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../tut/quick-topics/Managing-pins.html">Managing pins</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../tut/quick-topics/Managing-variables.html">Managing variables</a></li>
@@ -255,8 +264,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../tut/quick-topics/Testing-QComponents-for-overlap-and-collisions.html">Demo Notebook Demonstrating How to Test for Component/CPW Overlap</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../qcomponents-gallery.html">QComponent Gallery</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../../circuit-examples/index.html">Example Designs</a><input aria-label="Toggle navigation of Example Designs" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../circuit-examples/F.Small-quantum-chips/52-Barends_5Qubit_Xmon_Processor.html">Google style — 5-Qubit Xmon Processor (Barends et al.)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../circuit-examples/F.Small-quantum-chips/53-Wallraff_17Qubit_SurfaceCode.html">Wallraff group (ETH Zurich) — 17-Qubit Distance-3 Surface Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../circuit-examples/F.Small-quantum-chips/54-Wallraff_TwoQubit_Cell_Mesh.html">Two-Qubit Cell of the 17-Qubit Chip — Mesh for Simulation (gmsh)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../circuit-examples/F.Small-quantum-chips/51-Four_qubit_chip.html">IBM-era Qiskit Metal example — Four-Qubit Chip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../circuit-examples/F.Small-quantum-chips/Full-Physical-Design-of-iSWAP-Gates.html">Three Published iSWAP Gates — Full Chips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tut/2-From-components-to-chip/2.22-Design-100-qubits-programmatically.html">100-Qubit Mockup (algorithmic design, no routing)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../circuit-examples/full-design-flow-examples/A.4-Full-chip-design.html">Full Chip Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../circuit-examples/A.Qubits/01-Transmon_cross.html">Single Transmon - Grounded (xmon)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../circuit-examples/A.Qubits/02-Transmon_floating.html">Single Transmon - Floating</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../circuit-examples/A.Qubits/03-concentric_transmon.html">Concentric Transmon</a></li>
@@ -268,26 +283,28 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../circuit-examples/A.Qubits/09-JJ-Manhattan.html">Josephson Junction (Manhattan)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../circuit-examples/A.Qubits/10-Transmon_floating_teeth.html">Single Transmon - Floating with teeth</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../circuit-examples/A.Qubits/11-Star_shaped_qubit.html">Star shaped qubit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../circuit-examples/B.Resonators/11-Resonator_Meander.html">Simple CPW Meander</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../circuit-examples/C.Composite-bi-partite/21-OneTransmonsWithMeanderAndOTG.html">Transmon coupled to CPW resonator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../circuit-examples/D.Qubit-couplers/31-TwoCrossmonsTunableCoupler.html">Tunable Coupler (MIT)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../circuit-examples/D.Qubit-couplers/32-TwoTransmonsDirectCoupling.html">Direct Coupler (transmon-transmon)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../circuit-examples/D.Qubit-couplers/33-TwoTransmonsWithMeander.html">Bus Resonator Coupler (transmon-transmon)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../circuit-examples/B.Resonators/11-Resonator_Meander.html">Simple CPW Meander</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../circuit-examples/C.Composite-bi-partite/21-OneTransmonsWithMeanderAndOTG.html">Transmon coupled to CPW resonator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../circuit-examples/E.Input-output-coupling/41-LaunchPad.html">CPW Launch Pad</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../circuit-examples/E.Input-output-coupling/42-ResonatorAndLaunchPad.html">Readout line</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../circuit-examples/E.Input-output-coupling/43-TransmonPocketCL.html">Charge Line</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../circuit-examples/F.Small-quantum-chips/51-Four_qubit_chip.html">Four Qubit Chip Design</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../circuit-examples/full-design-flow-examples/Example-full-chip-design.html">Example full chip design</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../circuit-examples/full-design-flow-examples/Example-used-in-the-launch-video.html">Launch Videos</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../circuit-examples/full-design-flow-examples/Exercise-for-the-South-Korea-Hackathon%2720.html">South Korea Qiskit Hackathon’20 - Qiskit Metal exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../circuit-examples/full-design-flow-examples/A.4-Full-chip-design.html">A.4 Full chip design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../circuit-examples/full-design-flow-examples/A.5-Launch-video-example.html">A.5 Launch video example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../circuit-examples/full-design-flow-examples/A.6-Hackathon-exercise-South-Korea-2020.html">A.6 Hackathon exercise — South Korea 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../circuit-examples/full-design-flow-examples/A.7-IMS-2022-workshop.html">A.7 Qiskit Metal tutorial for IMS 2022</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../qcomponents-gallery.html">QComponent Gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../videoseducation.html">Videos &amp; Education</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">How It Works</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../workflow.html">Quantum Metal Workflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../quantization.html">Quantization Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../simulation-pathways.html">Simulation Pathways</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../gui-shortcuts.html">GUI Navigation &amp; Shortcuts</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
@@ -316,6 +333,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../apidocs/qiskit_metal.qlibrary.Rectangle.html">Rectangle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../apidocs/qiskit_metal.qlibrary.RectangleHollow.html">RectangleHollow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../apidocs/qiskit_metal.qlibrary.Cap3Interdigital.html">Cap3Interdigital</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../apidocs/qiskit_metal.qlibrary.CapFingerInFrame.html">CapFingerInFrame</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../apidocs/qiskit_metal.qlibrary.CapNInterdigital.html">CapNInterdigital</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../apidocs/qiskit_metal.qlibrary.ResonatorCoilRect.html">ResonatorCoilRect</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../apidocs/qiskit_metal.qlibrary.CoupledLineTee.html">CoupledLineTee</a></li>
@@ -336,6 +354,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../apidocs/qiskit_metal.qlibrary.RouteAnchors.html">RouteAnchors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../apidocs/qiskit_metal.qlibrary.RouteMixed.html">RouteMixed</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../apidocs/qiskit_metal.qlibrary.RoutePathfinder.html">RoutePathfinder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../apidocs/qiskit_metal.qlibrary.PolylineCPW.html">PolylineCPW</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../apidocs/qiskit_metal.qlibrary.jj_dolan.html">jj_dolan</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../apidocs/qiskit_metal.qlibrary.jj_manhattan.html">jj_manhattan</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../apidocs/qiskit_metal.qlibrary.TransmonConcentric.html">TransmonConcentric</a></li>
@@ -472,19 +491,33 @@
 <span class="c1"># the lite install — the free functions below that call into</span>
 <span class="c1"># ``gmsh.model`` raise via ``_require_gmsh()`` at use time rather</span>
 <span class="c1"># than at ``import qiskit_metal`` time.</span>
+<span class="n">_GMSH_LOAD_ERROR</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="k">try</span><span class="p">:</span>
     <span class="kn">import</span><span class="w"> </span><span class="nn">gmsh</span>
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>  <span class="c1"># pragma: no cover — exercised on lite installs</span>
     <span class="n">gmsh</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">_exc</span><span class="p">:</span>
+    <span class="c1"># gmsh is installed but its shared library could not load, typically</span>
+    <span class="c1"># because a system library (libGLU, libXft, ...) is missing on a</span>
+    <span class="c1"># headless Linux machine. Treat it like a missing optional dependency so</span>
+    <span class="c1"># ``QDesign`` still constructs, and keep the reason for the error message.</span>
+    <span class="n">gmsh</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">_GMSH_LOAD_ERROR</span> <span class="o">=</span> <span class="n">_exc</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">_require_gmsh</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Raise a clear error if gmsh isn&#39;t installed.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""Raise a clear error if gmsh isn't installed or can't load."""</span>
     <span class="k">if</span> <span class="n">gmsh</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">_GMSH_LOAD_ERROR</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"gmsh is installed but failed to load: </span><span class="si">{</span><span class="n">_GMSH_LOAD_ERROR</span><span class="si">}</span><span class="s2">. "</span>
+                <span class="s2">"Install the missing system library; on Debian/Ubuntu, e.g. "</span>
+                <span class="s2">"`apt-get install libglu1-mesa libxft2 libxinerama1 libxcursor1`."</span>
+            <span class="p">)</span>
         <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
-            <span class="s2">&quot;renderer_gmsh requires gmsh. Install with: &quot;</span>
-            <span class="s2">&quot;pip install &#39;quantum-metal[mesh]&#39; &quot;</span>
-            <span class="s2">&quot;(or the legacy alias &#39;quantum-metal[fem]&#39;)&quot;</span>
+            <span class="s2">"renderer_gmsh requires gmsh. Install with: "</span>
+            <span class="s2">"pip install 'quantum-metal[mesh]' "</span>
+            <span class="s2">"(or the legacy alias 'quantum-metal[fem]')"</span>
         <span class="p">)</span>
 
 
@@ -495,7 +528,7 @@
 <a class="viewcode-back" href="../../../../apidocs/qiskit_metal.renderers.Vec3DArray.html#qiskit_metal.renderers.Vec3DArray">[docs]</a>
 <span class="nd">@dataclass</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">Vec3DArray</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class to define an array of np.ndarray objects</span>
+<span class="w">    </span><span class="sd">"""Class to define an array of np.ndarray objects</span>
 
 <span class="sd">    Raises:</span>
 <span class="sd">        TypeError: if layer_z value is not provided for 2D design</span>
@@ -503,18 +536,18 @@
 
 <span class="sd">    Returns:</span>
 <span class="sd">        Vec3DArray: Array of np.ndarray objects</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">points</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span>
     <span class="n">path_vecs</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">__post_init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;This is to initialize the `path_vecs` field separately</span>
+<span class="w">        </span><span class="sd">"""This is to initialize the `path_vecs` field separately</span>
 <span class="sd">        as it depends on the `points` field, and needs to be</span>
 <span class="sd">        calculated after the __init__ for the dataclass is called.</span>
 
-<span class="sd">        CAUTION: Please don&#39;t change this unless you really need to!</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        CAUTION: Please don't change this unless you really need to!</span>
+<span class="sd">        """</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">path_vecs</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">points</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
             <span class="n">v1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
@@ -525,18 +558,18 @@
 <div class="viewcode-block" id="Vec3DArray.append">
 <a class="viewcode-back" href="../../../../apidocs/qiskit_metal.renderers.Vec3DArray.html#qiskit_metal.renderers.Vec3DArray.append">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vecs</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Append vector to the array</span>
+<span class="w">        </span><span class="sd">"""Append vector to the array</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            vecs (List[np.ndarray]): list of vectors to append</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">points</span> <span class="o">+=</span> <span class="n">vecs</span></div>
 
 
 <div class="viewcode-block" id="Vec3DArray.get_angle_between">
 <a class="viewcode-back" href="../../../../apidocs/qiskit_metal.renderers.Vec3DArray.html#qiskit_metal.renderers.Vec3DArray.get_angle_between">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">get_angle_between</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">j</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">ret_path_angle</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return acute angle between two vectors depending on &quot;ret_path_angle&quot;</span>
+<span class="w">        </span><span class="sd">"""Return acute angle between two vectors depending on "ret_path_angle"</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            i (int): i^th index from path_vecs or points list</span>
@@ -546,22 +579,27 @@
 
 <span class="sd">        Returns:</span>
 <span class="sd">            float: angle between the corresponding vectors</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="k">if</span> <span class="n">ret_path_angle</span><span class="p">:</span>
             <span class="n">v1</span> <span class="o">=</span> <span class="n">Vec3D</span><span class="o">.</span><span class="n">normed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">path_vecs</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
             <span class="n">v2</span> <span class="o">=</span> <span class="n">Vec3D</span><span class="o">.</span><span class="n">normed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">path_vecs</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
-            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">arccos</span><span class="p">(</span><span class="n">Vec3D</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)),</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span>
+                <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">arccos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">Vec3D</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">),</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)),</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">9</span>
+            <span class="p">)</span>
 
         <span class="n">v1</span> <span class="o">=</span> <span class="n">Vec3D</span><span class="o">.</span><span class="n">normed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
         <span class="n">v2</span> <span class="o">=</span> <span class="n">Vec3D</span><span class="o">.</span><span class="n">normed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">points</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">arccos</span><span class="p">(</span><span class="n">Vec3D</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)),</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span></div>
+        <span class="c1"># Clip: rounding can push the dot product past +-1 (arccos -&gt; NaN).</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">arccos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">Vec3D</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">),</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)),</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">9</span>
+        <span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="Vec3DArray.make_vec3DArray">
 <a class="viewcode-back" href="../../../../apidocs/qiskit_metal.renderers.Vec3DArray.html#qiskit_metal.renderers.Vec3DArray.make_vec3DArray">[docs]</a>
     <span class="nd">@staticmethod</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">make_vec3DArray</span><span class="p">(</span><span class="n">points</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]],</span> <span class="n">layer_z</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a Vec3DArray object from list of points</span>
+<span class="w">        </span><span class="sd">"""Create a Vec3DArray object from list of points</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            points (List[List[Union[int, float]]]): list of points</span>
@@ -574,7 +612,7 @@
 
 <span class="sd">        Returns:</span>
 <span class="sd">            Vec3DArray: return a Vec3DArray object</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="n">vecs</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">xyz</span> <span class="ow">in</span> <span class="n">points</span><span class="p">:</span>
             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">xyz</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
@@ -584,11 +622,11 @@
                     <span class="n">vecs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">xyz</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xyz</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">layer_z</span><span class="p">]))</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
-                        <span class="s2">&quot;Expected a layer_z value for 2D geometry, found NoneType.&quot;</span>
+                        <span class="s2">"Expected a layer_z value for 2D geometry, found NoneType."</span>
                     <span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-                    <span class="sa">f</span><span class="s2">&quot;Expected a 2-D or 3-D coordinate, got </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">xyz</span><span class="p">)</span><span class="si">}</span><span class="s2">-D instead.&quot;</span>
+                    <span class="sa">f</span><span class="s2">"Expected a 2-D or 3-D coordinate, got </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">xyz</span><span class="p">)</span><span class="si">}</span><span class="s2">-D instead."</span>
                 <span class="p">)</span>
 
         <span class="k">return</span> <span class="n">Vec3DArray</span><span class="p">(</span><span class="n">vecs</span><span class="p">)</span></div>
@@ -597,7 +635,7 @@
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">vecs_to_gmsh_points</span><span class="p">(</span><span class="n">vecs</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">],</span> <span class="n">layer_z</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create Gmsh points from np.ndarray objs</span>
+<span class="w">    </span><span class="sd">"""Create Gmsh points from np.ndarray objs</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        vecs (List[np.ndarray]): list of np.ndarray objs</span>
@@ -605,7 +643,7 @@
 
 <span class="sd">    Returns:</span>
 <span class="sd">        list: list of Gmsh points</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">points</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">vecs</span><span class="p">:</span>
         <span class="n">p</span> <span class="o">=</span> <span class="n">gmsh</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">occ</span><span class="o">.</span><span class="n">addPoint</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">layer_z</span><span class="p">)</span>
@@ -621,7 +659,7 @@
     <span class="n">layer_z</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
     <span class="n">ret_pts</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create offset points for straight line</span>
+<span class="w">    </span><span class="sd">"""Create offset points for straight line</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        pt_vec (np.ndarray): vectors of points in line</span>
@@ -633,7 +671,7 @@
 
 <span class="sd">    Returns:</span>
 <span class="sd">        list: list of Gmsh points or vec3D objs</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">path_angle</span> <span class="o">=</span> <span class="n">Vec3D</span><span class="o">.</span><span class="n">angle_azimuth</span><span class="p">(</span><span class="n">path_vec</span><span class="p">)</span>
     <span class="n">perp_angle</span> <span class="o">=</span> <span class="n">path_angle</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span>
     <span class="n">cos_t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">perp_angle</span><span class="p">),</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
@@ -654,7 +692,7 @@
 <span class="k">def</span><span class="w"> </span><span class="nf">arc_width_offset_pts</span><span class="p">(</span>
     <span class="n">vec1</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">vec3</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">angle</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">width</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">layer_z</span><span class="p">:</span> <span class="nb">float</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create offset points for Circle Arcs</span>
+<span class="w">    </span><span class="sd">"""Create offset points for Circle Arcs</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        vec1 (np.ndarray): incoming vector to arc</span>
@@ -665,7 +703,7 @@
 
 <span class="sd">    Returns:</span>
 <span class="sd">        list: list of Gmsh points</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">perp_angle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">angle</span>  <span class="c1"># π - (angle + π/2)</span>
     <span class="n">cos_t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">perp_angle</span><span class="p">),</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
     <span class="n">sin_t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">perp_angle</span><span class="p">),</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
@@ -688,7 +726,7 @@
 <span class="k">def</span><span class="w"> </span><span class="nf">make_arc_vecs</span><span class="p">(</span>
     <span class="n">angle</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">fillet</span><span class="p">:</span> <span class="nb">float</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create vectors for the circle arc</span>
+<span class="w">    </span><span class="sd">"""Create vectors for the circle arc</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        angle (float): angle of arc</span>
@@ -696,7 +734,7 @@
 
 <span class="sd">    Returns:</span>
 <span class="sd">        Tuple[np.ndarray, np.ndarray, np.ndarray]: vectors defining the arc control points</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">sector_angle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">-</span> <span class="n">angle</span>
     <span class="n">intercept</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">fillet</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">sector_angle</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span>
     <span class="n">cos_t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">sector_angle</span><span class="p">),</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
@@ -717,7 +755,7 @@
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">transform_arc_points</span><span class="p">(</span><span class="n">pts</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">translate</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">path_vecs</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Apply transformation to arc points</span>
+<span class="w">    </span><span class="sd">"""Apply transformation to arc points</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        pts (list): list of Gmsh points</span>
@@ -726,7 +764,7 @@
 
 <span class="sd">    Returns:</span>
 <span class="sd">        list: list of Gmsh points</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">dim_tags</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pts</span><span class="p">]</span>
     <span class="n">new_pts</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pts</span><span class="p">]</span>
 
@@ -748,10 +786,10 @@
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">remove_degenerate_segments</span><span class="p">(</span><span class="n">coords</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">min_len</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Drop interior vertices that would create a segment shorter than</span>
+<span class="w">    </span><span class="sd">"""Drop interior vertices that would create a segment shorter than</span>
 <span class="sd">    ``min_len``, always preserving the two endpoints.</span>
 
-<span class="sd">    A CPW path segment shorter than the conductor&#39;s own width collapses the</span>
+<span class="sd">    A CPW path segment shorter than the conductor's own width collapses the</span>
 <span class="sd">    width-offset geometry in :func:`render_path_curves`: the two offset points</span>
 <span class="sd">    of adjacent vertices coincide, and Gmsh rejects the resulting zero-length</span>
 <span class="sd">    line (``Could not create line``). Routes routinely add such sub-width lead</span>
@@ -768,7 +806,7 @@
 
 <span class="sd">    Returns:</span>
 <span class="sd">        list: the cleaned vertex list (endpoints preserved).</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">pts</span> <span class="o">=</span> <span class="p">[</span><span class="nb">tuple</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">coords</span><span class="p">]</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">pts</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">min_len</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">pts</span>
@@ -791,7 +829,7 @@
 <span class="k">def</span><span class="w"> </span><span class="nf">draw_curves</span><span class="p">(</span>
     <span class="n">recent_pts</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">curves1</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">curves2</span><span class="p">:</span> <span class="nb">list</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">list</span><span class="p">,</span> <span class="nb">list</span><span class="p">,</span> <span class="nb">list</span><span class="p">]:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Draw the curves using control points</span>
+<span class="w">    </span><span class="sd">"""Draw the curves using control points</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        recent_pts (list): list to keep track of recent points</span>
@@ -804,12 +842,12 @@
 
 <span class="sd">    Returns:</span>
 <span class="sd">        Tuple[list, list, list]: returns a tuple of recent_pts, curves1, curves2</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">rec_pts</span> <span class="o">=</span> <span class="p">[]</span>
 
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">recent_pts</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">]:</span>
         <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
-            <span class="s2">&quot;Unexpected geometry {len(recent_pts) not in [4,7]}. Check your geometry and retry.&quot;</span>
+            <span class="s2">"Unexpected geometry {len(recent_pts) not in [4,7]}. Check your geometry and retry."</span>
         <span class="p">)</span>
 
     <span class="n">l1</span> <span class="o">=</span> <span class="n">gmsh</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">occ</span><span class="o">.</span><span class="n">addLine</span><span class="p">(</span><span class="n">recent_pts</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">recent_pts</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
@@ -836,7 +874,7 @@
     <span class="n">bad_fillet_idxs</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span>
     <span class="n">straight_line_tol</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1e-9</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Helper function for rendering path QGeometry curves</span>
+<span class="w">    </span><span class="sd">"""Helper function for rendering path QGeometry curves</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        vecs (Vec3DArray): vector array</span>
@@ -851,7 +889,7 @@
 
 <span class="sd">    Returns:</span>
 <span class="sd">        list: list of Gmsh curves</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">recent_pts</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># To store recent Gmsh points</span>
     <span class="n">curves1</span><span class="p">,</span> <span class="n">curves2</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>  <span class="c1"># To store lines and arcs for each visual side</span>
 
@@ -874,10 +912,14 @@
         <span class="n">is_filleted</span> <span class="o">=</span> <span class="kc">False</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">bad_fillet_idxs</span> <span class="k">else</span> <span class="kc">True</span>
 
         <span class="k">if</span> <span class="n">fillet</span> <span class="o">&lt;</span> <span class="mf">0.0</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Expected positive fillet radius, got </span><span class="si">{</span><span class="n">fillet</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Expected positive fillet radius, got </span><span class="si">{</span><span class="n">fillet</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
 
         <span class="k">elif</span> <span class="n">fillet</span> <span class="o">&gt;</span> <span class="mf">0.0</span> <span class="ow">and</span> <span class="n">is_filleted</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">angle12</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="n">straight_line_tol</span><span class="p">):</span>
+            <span class="c1"># Straight, or so nearly straight that the arc (whose control</span>
+            <span class="c1"># points are rounded to 1e-9) would collapse and gmsh could not</span>
+            <span class="c1"># create it: draw straight through.</span>
+            <span class="n">arc_reach</span> <span class="o">=</span> <span class="n">fillet</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">-</span> <span class="n">angle12</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">angle12</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="n">straight_line_tol</span><span class="p">)</span> <span class="ow">or</span> <span class="n">arc_reach</span> <span class="o">&lt;</span> <span class="mf">1e-6</span><span class="p">:</span>
                 <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span> <span class="o">=</span> <span class="n">line_width_offset_pts</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">pv2</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">layer_z</span><span class="p">)</span>
                 <span class="n">recent_pts</span> <span class="o">+=</span> <span class="p">[</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">]</span>
 
@@ -941,7 +983,7 @@
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on 2026/08/12</div>
+              Last updated on 2026/09/28</div>
           </div>
           <div class="right-details">
             
@@ -956,7 +998,7 @@
       
     </aside>
   </div>
-</div><script src="../../../../_static/documentation_options.js?v=ec16d22d"></script>
+</div><script src="../../../../_static/documentation_options.js?v=39bb1c6d"></script>
     <script src="../../../../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../../../../_static/scripts/furo.js?v=46bd48cc"></script>
@@ -964,6 +1006,8 @@
     <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.esm.min.mjs";
+
+
 
 
 

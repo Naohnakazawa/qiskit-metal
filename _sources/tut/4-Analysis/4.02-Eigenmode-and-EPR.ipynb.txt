@@ -12,6 +12,14 @@
   },
   {
    "cell_type": "markdown",
+   "id": "simulation-pathways",
+   "metadata": {},
+   "source": [
+    "> 🧭 **Other simulation pathways.** This notebook uses Ansys, which needs a license. Without one, the same kind of result can come from the open-source ElmerFEM path for capacitance (tutorial 4.19) or the pip-installable gmsh + scikit-fem solver for eigenmodes, couplings and capacitance (tutorials 4.43–4.45); AWS Palace is available through SQDMetal, with a native integration in progress. [Simulation pathways](https://qiskit-community.github.io/qiskit-metal/simulation-pathways.html) summarizes what each solver computes, how to install it, and which tutorials use it."
+   ]
+  },
+  {
+   "cell_type": "markdown",
    "id": "4fbd1f1d",
    "metadata": {},
    "source": [
@@ -49,6 +57,19 @@
     "1. Specify the junctions in the model; in this case there are 2 junctions.\n",
     "1. Find the electric and magnetic energy stored in the substrate and the system as a whole.\n",
     "1. Perform EPR analysis for all modes and variations."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "5027287b",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import qiskit_metal as metal\n",
+    "from qiskit_metal import designs, draw\n",
+    "from qiskit_metal import MetalGUI, Dict, Headings\n",
+    "import pyEPR as epr"
    ]
   },
   {
@@ -222,6 +243,33 @@
     "eig_qb.sim.setup_update(max_delta_f=0.4, min_freq_ghz=1.1)\n",
     "\n",
     "eig_qb.sim.setup"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "07173ca3",
+   "metadata": {},
+   "source": [
+    "#### Link the junction to the `Lj` and `Cj` variables\n",
+    "\n",
+    "`sim.setup.vars` defines Ansys *design variables* named `Lj` and `Cj`. The EPR step later reads the junction inductance from the `Lj` variable. The junction itself, however, is drawn in HFSS as a lumped RLC boundary whose inductance comes from the qubit's own `hfss_inductance` option, which defaults to a fixed `\"10nH\"`.\n",
+    "\n",
+    "To make the field simulation and the EPR Hamiltonian use the same junction, point the qubit at the variables. Now changing `eig_qb.sim.setup.vars.Lj` (as above) changes the junction that HFSS simulates too.\n",
+    "\n",
+    "> Without this step HFSS would simulate a 10 nH junction while the EPR analysis assumes 11 nH. See [issue #1019](https://github.com/qiskit-community/qiskit-metal/issues/1019). The outputs stored further down in this notebook were generated before this step was added."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "1bc9674b",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Use the Ansys design variables for the junction's lumped inductance/capacitance\n",
+    "q1.options.hfss_inductance = \"Lj\"\n",
+    "q1.options.hfss_capacitance = \"Cj\"\n",
+    "gui.rebuild()"
    ]
   },
   {
