@@ -9,7 +9,7 @@
         <title>5-Qubit Xmon Processor (Barends et al., 2014) - Quantum Metal 0.9.0</title>
       <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d111a655" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/qiskit-sphinx-theme.css?v=8ff9dcb6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/qiskit-sphinx-theme.css?v=fc6d6d93" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vibur" />
     <link rel="stylesheet" type="text/css" href="../../_static/jupyterlite_sphinx.css?v=f676e775" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
@@ -647,6 +647,7 @@ Placed qubits Q0-Q4 and their XY coupling pads.
 <section id="3.-Multiplexed-readout-feedline">
 <h2>3. Multiplexed readout feedline<a class="headerlink" href="#3.-Multiplexed-readout-feedline" title="Link to this heading">¶</a></h2>
 <p>A single feedline runs across the top of the chip. A <code class="docutils literal notranslate"><span class="pre">CoupledLineTee</span></code> directional coupler sits above each qubit, and <code class="docutils literal notranslate"><span class="pre">CapNInterdigital</span></code> components terminate the feedline’s input/output before it reaches the edge launchpads.</p>
+<p>Each coupler’s second line is the coupling end of a readout resonator. <code class="docutils literal notranslate"><span class="pre">open_termination=False</span></code> shorts that end to ground; the other end is the open readout claw at the qubit, so each resonator is a quarter-wave (λ/4) resonator. With the coupler’s default, <code class="docutils literal notranslate"><span class="pre">open_termination=True</span></code>, both ends would be open and the fundamental would be a λ/2 mode at about twice the frequency.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
@@ -666,6 +667,9 @@ Placed qubits Q0-Q4 and their XY coupling pads.
                 <span class="n">orientation</span><span class="o">=</span><span class="s2">"0"</span><span class="p">,</span>
                 <span class="n">coupling_length</span><span class="o">=</span><span class="s2">"200um"</span><span class="p">,</span>
                 <span class="n">coupling_space</span><span class="o">=</span><span class="s2">"4um"</span><span class="p">,</span>
+                <span class="c1"># Short the resonator end to ground: with the open claw at</span>
+                <span class="c1"># the qubit, each readout resonator is a quarter-wave.</span>
+                <span class="n">open_termination</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
             <span class="p">),</span>
         <span class="p">)</span>
     <span class="p">)</span>
@@ -1064,9 +1068,9 @@ Total components: 52
 <span class="n">gds_renderer</span> <span class="o">=</span> <span class="n">design</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">gds</span>
 <span class="n">gds_renderer</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">short_segments_to_not_fillet</span> <span class="o">=</span> <span class="s2">"False"</span>
 
-<span class="c1"># The renderer logs notes on cheesing and on its sample junction cell</span>
-<span class="c1"># (Fake_Junctions.GDS, which this notebook does not use); show errors only</span>
-<span class="c1"># while exporting.</span>
+<span class="c1"># The renderer logs notes on cheesing, and that no junction GDS file is set</span>
+<span class="c1"># (options.path_filename defaults to None, so the junctions are left out of</span>
+<span class="c1"># the mask); show errors only while exporting.</span>
 <span class="n">level</span> <span class="o">=</span> <span class="n">qm</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">level</span>
 <span class="n">qm</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">ERROR</span><span class="p">)</span>
 <span class="k">try</span><span class="p">:</span>
@@ -1159,7 +1163,7 @@ Layout exported to GDSII: barends_5qubit_processor.gds
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on 2026/10/08</div>
+              Last updated on 2026/10/11</div>
           </div>
           <div class="right-details">
             

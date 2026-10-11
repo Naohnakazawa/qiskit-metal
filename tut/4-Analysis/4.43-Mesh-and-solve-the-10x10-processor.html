@@ -9,7 +9,7 @@
         <title>4.43 Mesh and Solve the 10 × 10 Processor - Quantum Metal 0.9.0</title>
       <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d111a655" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/qiskit-sphinx-theme.css?v=8ff9dcb6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/qiskit-sphinx-theme.css?v=fc6d6d93" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vibur" />
     <link rel="stylesheet" type="text/css" href="../../_static/jupyterlite_sphinx.css?v=f676e775" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
@@ -515,6 +515,8 @@ which tutorials use it.</p>
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># In Colab, uncomment to install the dependencies of the whole series.</span>
+<span class="c1"># Colab only (not needed locally): gmsh's Linux wheel needs system graphics libraries Colab lacks.</span>
+<span class="c1"># !apt-get -qq update &amp;&amp; apt-get -qq install -y libglu1-mesa libgl1 libxcursor1 libxft2 libxinerama1 libxfixes3 libxrender1 libxext6 libfontconfig1 &gt; /dev/null</span>
 <span class="c1"># !pip install -q "quantum-metal[skfem]" pymetis</span>
 </pre></div>
 </div>
@@ -1275,7 +1277,7 @@ dipole estimate A/2pi = 15.7 MHz with this p_x (paper: 14.2 MHz with its p_x; fu
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on 2026/10/08</div>
+              Last updated on 2026/10/11</div>
           </div>
           <div class="right-details">
             

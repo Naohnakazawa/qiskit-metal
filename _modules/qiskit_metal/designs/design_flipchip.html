@@ -8,7 +8,7 @@
         <title>qiskit_metal.designs.design_flipchip - Quantum Metal 0.9.0</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=d111a655" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/qiskit-sphinx-theme.css?v=8ff9dcb6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/qiskit-sphinx-theme.css?v=fc6d6d93" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vibur" />
     <link rel="stylesheet" type="text/css" href="../../../_static/jupyterlite_sphinx.css?v=f676e775" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
@@ -514,6 +514,13 @@
 <span class="sd">    Typically assumed to have some CPW geometries.</span>
 
 <span class="sd">    Inherits QDesign class.</span>
+
+<span class="sd">    The two chips are ``C_chip`` (device side at z = 0, extending to negative</span>
+<span class="sd">    z) and ``Q_chip`` (device side at ``chips["Q_chip"]["size"]["center_z"]``,</span>
+<span class="sd">    extending to positive z). The default gap between them, ``center_z =</span>
+<span class="sd">    "20 um"``, is a placeholder: set it to the bump height of the stack being</span>
+<span class="sd">    modelled (bump-bonded stacks are typically a few micrometres apart), e.g.</span>
+<span class="sd">    ``design.chips["Q_chip"]["size"]["center_z"] = "8 um"``.</span>
 <span class="sd">    """</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
@@ -673,7 +680,7 @@
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on 2026/10/08</div>
+              Last updated on 2026/10/11</div>
           </div>
           <div class="right-details">
             
