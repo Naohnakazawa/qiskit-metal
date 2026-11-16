@@ -1,36 +1,65 @@
 .. _headless-usage:
 
 ==========================================
-Using Quantum Metal without the Qt GUI
+Desktop GUI or headless
 ==========================================
 
-You do not need the desktop Qt GUI (``MetalGUI``) to use Quantum
-Metal. The full API — designs, components, renderers, analyses — works
-headlessly in a plain Python interpreter, a Jupyter notebook, or a
-cloud notebook environment (Colab, Binder, JupyterLab on a shared
-server). The Qt GUI is one *interface* to the API, not a requirement.
+Quantum Metal has two ways to look at a design. Both use the same Python
+API (designs, components, renderers, analyses); they differ only in where
+the picture appears.
+
+* **The desktop GUI** (``MetalGUI``) is a Qt window with a component
+  library, an options editor, a log and a live plot. Pick this when you
+  work at a laptop or workstation and want to click on, edit and rebuild
+  components interactively. It needs the optional ``[gui]`` install (PySide6).
+* **Headless** means no Qt window. ``qm.view(design)`` returns a matplotlib
+  figure, and ``qm.gui(design)`` returns an inline viewer with the same
+  ``rebuild()``, ``screenshot()`` and ``edit_component(...)`` methods. It
+  runs in a plain script, a Jupyter notebook, a CI job, Colab or Binder,
+  and it is what ``pip install quantum-metal`` gives you by default.
+
+.. grid:: 1 1 2 2
+   :gutter: 3
+   :class-container: qm-pair
+
+   .. grid-item::
+
+      .. figure:: _static/workflow/design-gui.png
+         :alt: The Quantum Metal desktop GUI: component library and options editor on the left, a plot of one transmon qubit in the center, a log at the bottom.
+         :width: 100%
+
+         Desktop GUI: ``gui = qm.gui(design)`` opens this window.
+
+   .. grid-item::
+
+      .. figure:: images/headless-view.png
+         :alt: A matplotlib plot of the same transmon qubit, two blue pads inside a gray pocket, with plain axes and no toolbar or panels.
+         :width: 100%
+
+         Headless: ``qm.view(design)`` draws the same layout inline.
+
+What you give up without the GUI is the point-and-click editing: the
+dockable panels and the interactive pan/zoom toolbar. Everything else is
+identical. Designs, GDS export, renderers and analyses do not depend on Qt.
+
+How ``qm.gui(design)`` chooses
+==============================
+
+``qm.gui(design)`` returns the desktop ``MetalGUI`` when Qt and a display
+are available, and the inline ``MetalGUIHeadless`` otherwise: no PySide6
+installed, a Linux session without ``DISPLAY``, Colab, Binder, or
+``QISKIT_METAL_HEADLESS=1``. ``qm.gui(design, force_headless=True)`` forces
+the inline viewer for one call. A tutorial written with ``qm.gui(design)``
+therefore runs unchanged on a laptop and in the cloud.
 
 .. rubric:: Run the tutorials in your browser
 
-.. image:: https://colab.research.google.com/assets/colab-badge.svg
-   :target: https://colab.research.google.com/github/qiskit-community/qiskit-metal/blob/main/docs/tut/1-Overview/1.1-Quick-start.ipynb
-   :alt: Open Quick Start in Colab
+The Colab and Binder badges are on the :doc:`quickstart` page. In both, the first cell installs the lite wheel
+(``pip install -q quantum-metal``), and the tutorial's ``qm.gui(design)``
+call picks the inline viewer.
 
-.. image:: https://mybinder.org/badge_logo.svg
-   :target: https://mybinder.org/v2/gh/qiskit-community/qiskit-metal/main?labpath=docs%2Ftut%2F1-Overview%2F1.1-Quick-start.ipynb
-   :alt: Open Quick Start in Binder
-
-In Colab / Binder the first cell installs the lite wheel
-(``pip install -q quantum-metal``). The tutorial then calls
-``gui = qm.gui(design)`` — a factory that returns the desktop
-``MetalGUI`` when a display is available and a Qt-free
-``MetalGUIHeadless`` (inline matplotlib renderer with the same
-``gui.rebuild()`` / ``gui.screenshot()`` / ``gui.edit_component(...)``
-surface) when it isn't. The same notebook runs in both environments
-unchanged.
-
-Quick start
-===========
+Render without Qt
+=================
 
 The shortest path to rendering a design without Qt:
 
@@ -48,7 +77,7 @@ The shortest path to rendering a design without Qt:
     fig.savefig("q1.png")          # save to file
     # or, in a Jupyter notebook, just `fig` displays inline.
 
-``qm.view`` accepts options for customising the output:
+``qm.view`` accepts options for customizing the output:
 
 .. code-block:: python
 
@@ -68,7 +97,7 @@ The shortest path to rendering a design without Qt:
     qm.view(design, figsize=(10, 8))
 
 The returned :class:`matplotlib.figure.Figure` can be saved
-(``fig.savefig``), embedded in a larger figure, or further customised
+(``fig.savefig``), embedded in a larger figure, or further customized
 with the standard matplotlib API.
 
 What works headlessly
@@ -100,12 +129,10 @@ Only the interactive desktop editor itself:
 Installing without Qt
 =====================
 
-As of **v0.7.0**, ``pip install quantum-metal`` no longer pulls in
-PySide6 or the Qt stack. The base install is headless by default —
-no GUI, no Qt surprises.
+``pip install quantum-metal`` does not pull in PySide6 or the Qt stack: the base install is headless.
 
 If you have the ``[gui]`` extra installed and want to suppress Qt
-initialisation at runtime (e.g. in a script that runs headlessly),
+initialization at runtime (e.g. in a script that runs headlessly),
 set the ``QISKIT_METAL_HEADLESS`` environment variable:
 
 .. code-block:: bash
@@ -115,33 +142,14 @@ set the ``QISKIT_METAL_HEADLESS`` environment variable:
 
 This prevents matplotlib from switching to the ``QtAgg`` backend
 during import. The Qt packages stay installed but are never touched.
+``qm.gui(design)`` then returns the inline viewer; ``qm.gui(design,
+force_headless=True)`` does the same for one call, and
+``QISKIT_METAL_HEADLESS_QUIET=1`` hides the one-time notice it prints.
 
 Install extras
 ==============
 
-* ``pip install quantum-metal`` — lite default: no Qt, no Ansys, no gmsh
-* ``pip install "quantum-metal[gui]"`` — + PySide6 + qdarkstyle
-* ``pip install "quantum-metal[ansys]"`` — + pyaedt + pyEPR-quantum
-* ``pip install "quantum-metal[mesh]"`` — + gmsh (foundation for Elmer / Palace).
-  ``[fem]`` is a backward-compatible alias.
-* ``pip install "quantum-metal[full]"`` — all extras (v0.6.x behavior)
-
-See :doc:`installation` for the full feature matrix and
-:doc:`migration-to-v0.7.0` for per-persona migration recipes.
-
-Roadmap: a richer in-notebook viewer
-====================================
-
-``qm.view`` covers the **viewing** workflow: render a design to an
-inline image. A richer interactive viewer — pan, zoom, click-to-select
-components, edit option values inline — is planned as a future
-project. The likely direction is Jupyter widgets + Plotly or
-``ipympl``, both of which give us a no-Qt interactive surface that
-works in Colab, Binder, and JupyterLab without setup gymnastics.
-
-This will be tracked as its own initiative once the basic headless
-rendering path (this page) is stable. In the meantime, ``qm.view`` is
-the supported way to display designs in notebooks.
+The extras (``[gui]``, ``[ansys]``, ``[mesh]``, ``[skfem]``, ``[full]``) and what each adds are listed on :doc:`installation`.
 
 See also
 ========

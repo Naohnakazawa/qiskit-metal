@@ -278,10 +278,6 @@ mesher — are opt-in **extras**.
 
 .. note::
 
-   **Migrating from v0.6.x?** See :doc:`migration-to-v0.7.0` for
-   per-persona migration recipes (GUI user / HFSS user / FEM user /
-   AI orchestrator) and common-error fixes.
-
    **CI coverage:** the ``tests-lite`` CI job validates the lite
    path on every commit; the ``tests-extras`` job exercises
    ``[gui]``, ``[ansys]``, ``[mesh]``, and ``[fem]`` (alias)
@@ -321,12 +317,12 @@ Run the following commands in the root of the repository (i.e. the ``quantum-met
 
    .. tab-item:: uv (recommended)
 
-      **Why:** Fast, modern resolver/installer; typically the least friction for scientific stacks. Use Python 3.10 through 3.14. ``uv`` installations instruction are available `here <https://docs.astral.sh/uv/getting-started/installation/>`_.
+      **Why:** Fast, modern resolver/installer; typically the least friction for scientific stacks. Use Python 3.11 through 3.14. ``uv`` installations instruction are available `here <https://docs.astral.sh/uv/getting-started/installation/>`_.
 
       .. code-block:: sh
 
          # Create a new virtual environment
-         uv venv --python 3.11  # any of 3.10-3.14
+         uv venv --python 3.11  # any of 3.11-3.14
 
          # Install the package in editable mode
          uv pip install -e .
@@ -450,9 +446,9 @@ Setting up precommit hooks
 If are planning on committing, you can run the following in the root of your project to link the available precommit hooks.
 ::
 
-    ./hook_setup
+    ./hook_setup.sh
 
-Please make sure the command is run from the same shell you plan on using to commit. If running on Windows, please make sure that this script is run from git-bash or another Linux-style shell. Currently, the precommit hook will check for yapf formatting.
+Please make sure the command is run from the same shell you plan on using to commit. If running on Windows, please make sure that this script is run from git-bash or another Linux-style shell. The pre-commit hook runs ruff.
 
 =============
 Common Issues
